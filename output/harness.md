@@ -77,6 +77,13 @@ The three tickets are linked:
 
 ✎ = writes, but never moves money or sends anything. 🔒 = human-only; never given to an agent.
 
+### The three ticket-unlocking tools (built first, in Problem 3)
+| Tool (inputs) | Reads | Unlocks | Why it's the right tool |
+|---|---|---|---|
+| `get_invoice(invoice_id)` | invoices ⨝ vendors, desk | **101** | Ticket 101 carries invoice_id 501. The tool shows the $840 Bulldog Print Co bill (due 2026-08-28) is open and 3 days overdue against date_today, so the only apparel vendor (5-day lead) is blocked from reprinting the size S tee. |
+| `get_lease(lease_id)` | leases, desk | **102** | Ticket 102 carries lease_id 1. The tool confirms the $2,400 Chapel Street rent owed to Elm City Properties is due 2026-09-02, 2 days out and not yet overdue. |
+| `check_stock(sku, size, qty_needed?)` | inventory | **103** | Ticket 103 needs 20 CC-HOOD-NAVY in size M. The tool returns 8 on hand in Aisle A and a shortfall of 12, so the order can't be filled from stock. |
+
 **What the write tools refuse:**
 - **`request_payment`** refuses:
   - an amount that differs from the invoice or rent owed

@@ -1,8 +1,9 @@
 """Check each MCP tool output in output/mcp_smoke.json against the working DB.
 
 Every expected value is recomputed with direct SQL (dates via julianday),
-independent of the MCP server code. Writes "verified_against_db" into each
-entry and prints any field that doesn't match.
+independent of the MCP server code, against the database named in each
+entry's "verify_against" (default: the working copy). Writes
+"verified_against_db" into each entry and prints any field that doesn't match.
 
 Usage (from any folder):
     python tests/verify_mcp_smoke.py
@@ -53,11 +54,12 @@ BOOL_FIELDS = {"found", "is_overdue", "vendor_blocked", "can_fulfill"}
 
 def main() -> None:
     entries = json.loads(SMOKE_PATH.read_text(encoding="utf-8"))
-    conn = sqlite3.connect(f"{DB_PATH.as_uri()}?mode=ro", uri=True)
-    conn.row_factory = sqlite3.Row
 
     all_ok = True
     for entry in entries:
+        db_path = ROOT / entry.get("verify_against", "data/campus_customs_new.db")
+        conn = sqlite3.connect(f"{db_path.as_uri()}?mode=ro", uri=True)
+        conn.row_factory = sqlite3.Row
         tool = entry["tool"].rsplit("__", 1)[-1]
         row = conn.execute(QUERIES[tool], entry["arguments"]).fetchone()
         expected = {k: (bool(row[k]) if k in BOOL_FIELDS else row[k]) for k in row.keys()}
@@ -74,12 +76,12 @@ def main() -> None:
 
         entry["verified_against_db"] = not mismatches
         all_ok &= not mismatches
-        print(f"{entry['tool']}({entry['arguments']}): "
+        conn.close()
+        print(f"{entry['tool']}({entry['arguments']}) vs {db_path.name}: "
               f"{'OK' if not mismatches else 'MISMATCH'} ({len(expected)} fields checked)")
         for m in mismatches:
             print("   ", m)
 
-    conn.close()
     SMOKE_PATH.write_text(json.dumps(entries, indent=2) + "\n", encoding="utf-8")
     print("\nAll outputs match the database:", all_ok)
 

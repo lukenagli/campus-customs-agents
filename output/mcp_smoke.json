@@ -21,7 +21,10 @@
       "days_overdue": 3,
       "vendor_blocked": true
     },
-    "verified_against_db": true
+    "verified_against_db": true,
+    "phase": "before_run",
+    "db_state": "Fresh working copy, byte-identical to data/campus_customs.db, tested before the Problem 9 run. Re-verified against data/campus_customs.db because the working copy changed when tickets were resolved.",
+    "verify_against": "data/campus_customs.db"
   },
   {
     "prompt": "Using only the campus-customs MCP tools, when is rent due on lease 1 and how much is it?",
@@ -42,6 +45,84 @@
       "is_overdue": false,
       "days_overdue": 0
     },
+    "verified_against_db": true,
+    "phase": "before_run",
+    "db_state": "Fresh working copy, byte-identical to data/campus_customs.db, tested before the Problem 9 run. Re-verified against data/campus_customs.db because the working copy changed when tickets were resolved.",
+    "verify_against": "data/campus_customs.db"
+  },
+  {
+    "prompt": "Using only the campus-customs MCP tools, do we have enough navy hoodies in size M for an order of 20?",
+    "tool": "mcp__campus-customs__check_stock",
+    "arguments": {
+      "sku": "CC-HOOD-NAVY",
+      "size": "M",
+      "qty_needed": 20
+    },
+    "output": {
+      "found": true,
+      "sku": "CC-HOOD-NAVY",
+      "name": "Basic Hoodie Big Yale",
+      "size": "M",
+      "qty_on_hand": 8,
+      "location": "Aisle A",
+      "qty_needed": 20,
+      "shortfall": 12,
+      "can_fulfill": false
+    },
+    "verified_against_db": true,
+    "phase": "before_run",
+    "db_state": "Fresh working copy, byte-identical to data/campus_customs.db, tested before the Problem 9 run. Re-verified against data/campus_customs.db because the working copy changed when tickets were resolved.",
+    "verify_against": "data/campus_customs.db"
+  },
+  {
+    "prompt": "Using only the campus-customs MCP tools, is invoice 501 overdue? Who is the vendor and how much do we owe?",
+    "tool": "mcp__campus-customs__get_invoice",
+    "arguments": {
+      "invoice_id": 501
+    },
+    "output": {
+      "found": true,
+      "invoice_id": 501,
+      "amount": 840,
+      "due_date": "2026-08-28",
+      "status": "paid",
+      "description": "Rush reprint CC-TEE-WHITE S",
+      "vendor_id": 1,
+      "vendor_name": "Bulldog Print Co",
+      "vendor_specialty": "apparel reprint",
+      "vendor_lead_days": 5,
+      "today": "2026-08-31",
+      "is_overdue": false,
+      "days_overdue": 0,
+      "vendor_blocked": false
+    },
+    "phase": "end_of_run",
+    "db_state": "Committed working copy data/campus_customs_new.db in its end-of-run state (after the Problem 9 approvals).",
+    "verify_against": "data/campus_customs_new.db",
+    "verified_against_db": true
+  },
+  {
+    "prompt": "Using only the campus-customs MCP tools, when is rent due on lease 1 and how much is it?",
+    "tool": "mcp__campus-customs__get_lease",
+    "arguments": {
+      "lease_id": 1
+    },
+    "output": {
+      "found": true,
+      "lease_id": 1,
+      "space_name": "Chapel Street shop",
+      "landlord": "Elm City Properties",
+      "monthly_rent": 2400,
+      "next_due": "2026-10-02",
+      "notes": null,
+      "today": "2026-08-31",
+      "days_until_due": 32,
+      "is_overdue": false,
+      "days_overdue": 0
+    },
+    "phase": "end_of_run",
+    "db_state": "Committed working copy data/campus_customs_new.db in its end-of-run state (after the Problem 9 approvals).",
+    "verify_against": "data/campus_customs_new.db",
     "verified_against_db": true
   },
   {
@@ -63,6 +144,9 @@
       "shortfall": 12,
       "can_fulfill": false
     },
+    "phase": "end_of_run",
+    "db_state": "Committed working copy data/campus_customs_new.db in its end-of-run state (after the Problem 9 approvals).",
+    "verify_against": "data/campus_customs_new.db",
     "verified_against_db": true
   }
 ]
