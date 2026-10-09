@@ -1,0 +1,276 @@
+[
+  {
+    "run_id": "17123da43441",
+    "ticket_id": 102,
+    "status": "completed",
+    "started_at": "2026-10-08T23:34:28+00:00",
+    "finished_at": "2026-10-08T23:34:58+00:00",
+    "decision": {
+      "ticket_id": 102,
+      "ticket_type": "rent_notice",
+      "routed_to": [
+        "facilities",
+        "accounting"
+      ],
+      "decision": "Lease 1 is active and the $2,400 rent for Elm City Properties is due 2026-09-02, exactly two days after shop today (2026-08-31), so it is not overdue. Rent payment request 1 is pending human approval; rent has not been paid. Approve the requested rent payment while reserving funds for the separate overdue $840 invoice; paying both would leave $160 from the $3,400 balance.",
+      "discount_decision": null,
+      "payment_requests": [
+        {
+          "request_id": 1,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "reason": "Rent for Chapel Street shop at Elm City Properties, due 2026-09-02."
+        }
+      ],
+      "purchase_orders": [],
+      "customer_draft_saved": false,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Human approval of rent payment request 1 is pending."
+      ]
+    },
+    "usage": {
+      "input_tokens": 23247,
+      "output_tokens": 1633,
+      "total_tokens": 24880,
+      "requests": 10
+    },
+    "error": null
+  },
+  {
+    "run_id": "5219f7a1d537",
+    "ticket_id": 102,
+    "status": "completed",
+    "started_at": "2026-10-08T23:45:25+00:00",
+    "finished_at": "2026-10-08T23:45:31+00:00",
+    "decision": {
+      "ticket_id": 102,
+      "ticket_type": "rent_notice",
+      "routed_to": [
+        "facilities",
+        "accounting"
+      ],
+      "decision": "Lease 1 is active and the $2,400 rent for Elm City Properties is due 2026-09-02, exactly two days after shop today (2026-08-31), so it is not overdue. Rent payment request 1 is pending human approval; rent has not been paid. Approve the requested rent payment while reserving funds for the separate overdue $840 invoice; paying both would leave $160 from the $3,400 balance.",
+      "discount_decision": null,
+      "payment_requests": [
+        {
+          "request_id": 1,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "reason": "Rent for Chapel Street shop at Elm City Properties, due 2026-09-02."
+        }
+      ],
+      "purchase_orders": [],
+      "customer_draft_saved": false,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Human approval of rent payment request 1 is pending."
+      ]
+    },
+    "usage": {
+      "input_tokens": 23247,
+      "output_tokens": 1633,
+      "total_tokens": 24880,
+      "requests": 10
+    },
+    "error": null
+  },
+  {
+    "run_id": "4452fc9f3e43",
+    "ticket_id": 102,
+    "status": "completed",
+    "started_at": "2026-10-08T23:46:21+00:00",
+    "finished_at": "2026-10-08T23:46:26+00:00",
+    "decision": {
+      "ticket_id": 102,
+      "ticket_type": "rent_notice",
+      "routed_to": [
+        "facilities",
+        "accounting"
+      ],
+      "decision": "Lease 1 is active and the $2,400 rent for Elm City Properties is due 2026-09-02, exactly two days after shop today (2026-08-31), so it is not overdue. Rent payment request 1 is pending human approval; rent has not been paid. Approve the requested rent payment while reserving funds for the separate overdue $840 invoice; paying both would leave $160 from the $3,400 balance.",
+      "discount_decision": null,
+      "payment_requests": [
+        {
+          "request_id": 1,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "reason": "Rent for Chapel Street shop at Elm City Properties, due 2026-09-02."
+        }
+      ],
+      "purchase_orders": [],
+      "customer_draft_saved": false,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Human approval of rent payment request 1 is pending."
+      ]
+    },
+    "usage": {
+      "input_tokens": 23247,
+      "output_tokens": 1633,
+      "total_tokens": 24880,
+      "requests": 10
+    },
+    "error": null
+  },
+  {
+    "run_id": "3cffc5c6bd5e",
+    "ticket_id": 102,
+    "status": "completed",
+    "started_at": "2026-10-08T23:47:14+00:00",
+    "finished_at": "2026-10-08T23:47:19+00:00",
+    "decision": {
+      "ticket_id": 102,
+      "ticket_type": "rent_notice",
+      "routed_to": [
+        "facilities",
+        "accounting"
+      ],
+      "decision": "Lease 1 is active and the $2,400 rent for Elm City Properties is due 2026-09-02, exactly two days after shop today (2026-08-31), so it is not overdue. Rent payment request 1 is pending human approval; rent has not been paid. Approve the requested rent payment while reserving funds for the separate overdue $840 invoice; paying both would leave $160 from the $3,400 balance.",
+      "discount_decision": null,
+      "payment_requests": [
+        {
+          "request_id": 1,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "reason": "Rent for Chapel Street shop at Elm City Properties, due 2026-09-02."
+        }
+      ],
+      "purchase_orders": [],
+      "customer_draft_saved": false,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Human approval of rent payment request 1 is pending."
+      ]
+    },
+    "usage": {
+      "input_tokens": 23247,
+      "output_tokens": 1633,
+      "total_tokens": 24880,
+      "requests": 10
+    },
+    "error": null
+  },
+  {
+    "run_id": "408c0a9a0f23",
+    "ticket_id": 102,
+    "status": "completed",
+    "started_at": "2026-10-08T23:53:24+00:00",
+    "finished_at": "2026-10-08T23:53:30+00:00",
+    "decision": {
+      "ticket_id": 102,
+      "ticket_type": "rent_notice",
+      "routed_to": [
+        "facilities",
+        "accounting"
+      ],
+      "decision": "Lease 1 is active and the $2,400 rent for Elm City Properties is due 2026-09-02, exactly two days after shop today (2026-08-31), so it is not overdue. Rent payment request 1 is pending human approval; rent has not been paid. Approve the requested rent payment while reserving funds for the separate overdue $840 invoice; paying both would leave $160 from the $3,400 balance.",
+      "discount_decision": null,
+      "payment_requests": [
+        {
+          "request_id": 1,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "reason": "Rent for Chapel Street shop at Elm City Properties, due 2026-09-02."
+        }
+      ],
+      "purchase_orders": [],
+      "customer_draft_saved": false,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Human approval of rent payment request 1 is pending."
+      ]
+    },
+    "usage": {
+      "input_tokens": 23247,
+      "output_tokens": 1633,
+      "total_tokens": 24880,
+      "requests": 10
+    },
+    "error": null
+  },
+  {
+    "run_id": "299d99003334",
+    "ticket_id": 101,
+    "status": "completed",
+    "started_at": "2026-10-08T23:54:05+00:00",
+    "finished_at": "2026-10-08T23:55:19+00:00",
+    "decision": {
+      "ticket_id": 101,
+      "ticket_type": "customer_order",
+      "routed_to": [
+        "inventory",
+        "customer_service"
+      ],
+      "decision": "The requested CC-TEE-WHITE Bulldog tee in size S cannot currently be fulfilled: stock is 0 for quantity 1. Restocking is blocked by overdue invoice 501 for $840.00; payment request 2 needs human approval before a purchase order can be submitted. Bulldog Print Co's 5-day lead time applies only after unblocking, so no arrival date is promised.",
+      "discount_decision": null,
+      "payment_requests": [
+        {
+          "request_id": 2,
+          "kind": "invoice",
+          "ref_id": 501,
+          "amount": 840.0,
+          "reason": "Unblock Bulldog Print Co so the requested tee can be restocked."
+        }
+      ],
+      "purchase_orders": [],
+      "customer_draft_saved": true,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Human approval and execution of payment request 2 are pending.",
+        "A restock purchase order must be approved after the vendor is unblocked."
+      ]
+    },
+    "usage": {
+      "input_tokens": 35971,
+      "output_tokens": 5420,
+      "total_tokens": 41391,
+      "requests": 16
+    },
+    "error": null
+  },
+  {
+    "run_id": "21a47bc78479",
+    "ticket_id": 103,
+    "status": "completed",
+    "started_at": "2026-10-08T23:55:56+00:00",
+    "finished_at": "2026-10-08T23:56:44+00:00",
+    "decision": {
+      "ticket_id": 103,
+      "ticket_type": "price_override",
+      "routed_to": [
+        "inventory",
+        "accounting",
+        "customer_service"
+      ],
+      "decision": "Approved a bulk price of $50 per hoodie, 13.8% below the $58 list price and above the $22 unit cost, for a $28 unit margin ($560 across 20). Only 8 of 20 size-M hoodies are on hand; the remaining 12 would require a $264 purchase order, but available cash is $160, so no PO or arrival promise is possible. Customer Service saved draft 2 offering the 8 available hoodies at $50 each.",
+      "discount_decision": "Approved $50 each: 13.8% discount from list, with $28 margin per unit; not below the $22 cost.",
+      "payment_requests": [],
+      "purchase_orders": [],
+      "customer_draft_saved": true,
+      "final_status": "resolved",
+      "note_logged": true,
+      "open_questions": [
+        "Whether Yale AI Club wants the 8 currently available units."
+      ]
+    },
+    "usage": {
+      "input_tokens": 41521,
+      "output_tokens": 2789,
+      "total_tokens": 44310,
+      "requests": 17
+    },
+    "error": null
+  }
+]

@@ -1,0 +1,185 @@
+{
+  "source": "audit_trail.json events after reset marker #223 (2026-10-08T23:48:40.585+00:00) + data/campus_customs_new.db",
+  "checking_balance": 160.0,
+  "tickets": [
+    {
+      "id": 101,
+      "subject": "Bulldog tee",
+      "requester": "Tauhid Zaman",
+      "final_status": "resolved",
+      "outcome": "The size S tee is still out of stock (0 on hand). Accounting requested the overdue invoice 501 ($840.00), I approved it (request #2), and the invoice is now paid, which unblocks Bulldog Print Co. No restock PO was requested, and the draft to Tauhid promises no date.",
+      "run_id": "299d99003334",
+      "agents": [
+        {
+          "agent": "Boss",
+          "contribution": "The requested CC-TEE-WHITE Bulldog tee in size S cannot currently be fulfilled: stock is 0 for quantity 1. Restocking is blocked by overdue invoice 501 for $840.00; payment request 2 needs human approval before a purchase order can be submitted. Bulldog Print Co's 5-day lead time applies only after unblocking, so no arrival date is promised.",
+          "mcp_tools": [
+            "get_ticket",
+            "add_ticket_note",
+            "update_ticket_status"
+          ],
+          "handed_off_to": [
+            "Inventory",
+            "Customer Service"
+          ]
+        },
+        {
+          "agent": "Inventory",
+          "contribution": "CC-TEE-WHITE (Classic Bulldog Tee), size S: 0 on hand at Aisle B versus 1 needed, so shortfall is 1 and the order cannot currently be fulfilled. The matching apparel vendor, Bulldog Print Co (vendor 1), has a 5-day lead time but is blocked by unpaid invoice 501 for $840.00; a restock PO must wait until payment is approved and executed.",
+          "mcp_tools": [
+            "check_stock",
+            "find_vendors",
+            "get_vendor_open_invoices"
+          ],
+          "handed_off_to": [
+            "Accounting"
+          ]
+        },
+        {
+          "agent": "Accounting",
+          "contribution": "Invoice 501 is confirmed open and 3 days overdue. Checking has $1,000.00; total obligations are $840.00, leaving $160.00 after everything owed. I requested human approval for the exact $840.00 payment; no money has moved, and the restock PO must wait until payment is approved and executed.",
+          "mcp_tools": [
+            "get_invoice",
+            "list_obligations",
+            "get_cash_balance",
+            "list_approval_requests",
+            "request_payment"
+          ],
+          "handed_off_to": []
+        },
+        {
+          "agent": "Customer Service",
+          "contribution": "Draft saved for Tauhid Zaman explaining that the CC-TEE-WHITE Bulldog tee in size S is currently out of stock. It does not promise an arrival date and says Campus Customs will confirm an expected date once the restock is confirmed.",
+          "mcp_tools": [
+            "get_ticket",
+            "save_customer_draft"
+          ],
+          "handed_off_to": []
+        }
+      ],
+      "customer_draft_id": 1,
+      "human_approvals": [
+        {
+          "request_id": 2,
+          "kind": "invoice",
+          "amount": 840.0,
+          "approved_by": "Luke",
+          "decision": "approved",
+          "payment_id": 2
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "subject": "Rent due",
+      "requester": "Elm City Properties",
+      "final_status": "resolved",
+      "outcome": "Rent of $2,400.00 for lease 1 was requested by Accounting and paid after my approval (request #1); the lease's next due date moved to 2026-10-02.",
+      "run_id": "408c0a9a0f23",
+      "agents": [
+        {
+          "agent": "Boss",
+          "contribution": "Lease 1 is active and the $2,400 rent for Elm City Properties is due 2026-09-02, exactly two days after shop today (2026-08-31), so it is not overdue. Rent payment request 1 is pending human approval; rent has not been paid. Approve the requested rent payment while reserving funds for the separate overdue $840 invoice; paying both would leave $160 from the $3,400 balance.",
+          "mcp_tools": [
+            "get_ticket",
+            "add_ticket_note",
+            "update_ticket_status"
+          ],
+          "handed_off_to": [
+            "Facilities"
+          ]
+        },
+        {
+          "agent": "Facilities",
+          "contribution": "Lease 1 for the Chapel Street shop at Elm City Properties is active/current: $2,400 rent is due 2026-09-02, exactly 2 days after shop today (2026-08-31), so it is not overdue. Accounting requested rent payment request ID 1 for human approval; rent has not been paid.",
+          "mcp_tools": [
+            "get_lease",
+            "get_today",
+            "get_cash_balance"
+          ],
+          "handed_off_to": [
+            "Accounting"
+          ]
+        },
+        {
+          "agent": "Accounting",
+          "contribution": "Checking cash is $3,400 with no existing pending requests. Total obligations are $3,240, leaving $160 after all obligations; the $2,400 rent payment was requested for human approval (request ID 1), and no money has moved.",
+          "mcp_tools": [
+            "list_obligations",
+            "get_cash_balance",
+            "list_approval_requests",
+            "request_payment"
+          ],
+          "handed_off_to": []
+        }
+      ],
+      "customer_draft_id": null,
+      "human_approvals": [
+        {
+          "request_id": 1,
+          "kind": "rent",
+          "amount": 2400.0,
+          "approved_by": "Luke",
+          "decision": "approved",
+          "payment_id": 1
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "subject": "Bulk hoodie discount",
+      "requester": "Yale AI Club",
+      "final_status": "resolved",
+      "outcome": "Boss approved a $50.00 bulk price (above the $22.00 unit cost) and Customer Service drafted an offer for the 8 hoodies in stock. The 12-unit restock ($264.00) was not requested because only $160.00 was left.",
+      "run_id": "21a47bc78479",
+      "agents": [
+        {
+          "agent": "Boss",
+          "contribution": "Approved a bulk price of $50 per hoodie, 13.8% below the $58 list price and above the $22 unit cost, for a $28 unit margin ($560 across 20). Only 8 of 20 size-M hoodies are on hand; the remaining 12 would require a $264 purchase order, but available cash is $160, so no PO or arrival promise is possible. Customer Service saved draft 2 offering the 8 available hoodies at $50 each.",
+          "mcp_tools": [
+            "get_ticket",
+            "add_ticket_note",
+            "update_ticket_status"
+          ],
+          "handed_off_to": [
+            "Inventory",
+            "Accounting",
+            "Customer Service"
+          ]
+        },
+        {
+          "agent": "Inventory",
+          "contribution": "CC-HOOD-NAVY size M has 8 on hand at Aisle A for 20 needed, leaving a shortfall of 12. The matching apparel vendor is Bulldog Print Co (vendor 1), with a 5-day lead time; it is not blocked and has no open unpaid invoices. A purchase order for 12 units is needed, subject to human approval; unit price/cost was not available from inventory/vendor tools.",
+          "mcp_tools": [
+            "check_stock",
+            "find_vendors",
+            "get_vendor_open_invoices"
+          ],
+          "handed_off_to": []
+        },
+        {
+          "agent": "Accounting",
+          "contribution": "CC-HOOD-NAVY costs $22.00 per unit and lists at $58.00. A feasible $50.00 bulk price gives a $28.00 unit margin ($560.00 total on 20), a 13.8% discount off list, and remains above cost. The 12-unit PO would cost $264.00, but checking has only $160.00 available; no PO was requested. Cash after all listed obligations is $160.00.",
+          "mcp_tools": [
+            "get_pricing",
+            "list_obligations",
+            "get_cash_balance",
+            "list_approval_requests"
+          ],
+          "handed_off_to": []
+        },
+        {
+          "agent": "Customer Service",
+          "contribution": "Draft saved for Yale AI Club explaining that 8 size-M CC-HOOD-NAVY hoodies are available at the approved $50 each and asking whether they want that quantity. It does not promise the remaining 12 or an arrival date.",
+          "mcp_tools": [
+            "get_ticket",
+            "save_customer_draft"
+          ],
+          "handed_off_to": []
+        }
+      ],
+      "customer_draft_id": 2,
+      "human_approvals": []
+    }
+  ]
+}

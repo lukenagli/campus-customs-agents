@@ -1,0 +1,32 @@
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# SQLite side files (the .db files themselves ARE committed)
+data/*.db-wal
+data/*.db-shm
+data/*.db-journal
+
+# The original download (data/campus_customs.db is committed instead)
+data.zip
+
+# Runtime scratch
+output/*.json.tmp
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

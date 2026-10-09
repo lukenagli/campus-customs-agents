@@ -1,0 +1,10 @@
+# Install from the project folder:
+#   pip install -r requirements.txt
+fastmcp>=4.1
+# PydanticAI with the OpenAI extra (Responses API through Portkey) and MCP client support
+pydantic-ai-slim[openai,mcp]>=2.54,<3
+openai>=2.0
+python-dotenv>=1.0
+# Backend API
+fastapi>=0.115
+uvicorn[standard]>=0.30
